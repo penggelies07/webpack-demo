@@ -7,6 +7,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 // console.log('__dirname: ', __dirname);
 module.exports = {
+    mode: 'production',
     // 指定入口文件，程序从这里开始编译，__dirname是当前所在目录
     // []形式下是将多个文件达成一个js
     // entry: path.resolve(__dirname, '../src/index.js'),

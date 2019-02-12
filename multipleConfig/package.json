@@ -1,12 +1,13 @@
 {
-  "name": "single-config",
+  "name": "multiple-config",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "clean": "rimraf build/*",
-    "start": "webpack-dev-server --config webpack/webpack.config.js",
-    "build": "npm run clean && webpack --config webpack/webpack.config.js --progress"
+    "start": "webpack-dev-server --config webpack/webpack.dev.js --env.dev --progress",
+    "build": "rimraf build/dist/ && webpack --config webpack/webpack.prod.js --env.production --progress",
+    "build-dev": "rimraf build/dev/ && webpack --config webpack/webpack.dev.js --env.dev --progress",
+    "build-test": "rimraf build/test/ && webpack --config webpack/webpack.test.js --env.test --progress"
   },
   "author": "penggelies",
   "license": "ISC",
