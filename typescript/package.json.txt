@@ -1,0 +1,54 @@
+{
+    "name": "multiple-config",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      // √ 不指定需要执行的webpack配置文件路径，默认查找当前路径下的webpack配置文件路径
+      "dev": "webpack --progress -w"
+      // √ --config 必须带上要执webpack-dev-server行的webpack配置文件路径
+      "dev": "webpack --config ../webpack.config.js --progress --open -w"
+      // √ webpack指令没有--open，webpack-dev-server指令有，相当于起了一个http服务
+      "dev": "webpack-dev-server --config ../webpack.config.js --progress --open -w"
+    },
+    "author": "penggelies",
+    "license": "ISC",
+    "dependencies": {
+      "react": "^16.7.0",
+      "react-dom": "^16.7.0"
+    },
+    "devDependencies": {
+      "@babel/core": "^7.2.2",
+      "@babel/preset-env": "^7.3.1",
+      "@babel/preset-react": "^7.0.0",
+      "@types/node": "^11.9.3",
+      "@types/react": "^16.8.3",
+      "@types/react-dom": "^16.8.1",
+      // [ts] 类型“NodeModule”上不存在属性“hot”
+      "@types/webpack-env": "^1.13.6",
+      "babel-core": "^6.26.3",
+      "babel-eslint": "^10.0.1",
+      "babel-loader": "^7.1.5",
+      "babel-polyfill": "^6.26.0",
+      "babel-preset-env": "^1.7.0",
+      "babel-preset-react": "^6.24.1",
+      "extract-text-webpack-plugin": "^3.0.2",
+      "html-webpack-plugin": "^3.2.0",
+      "react-hot-loader": "^4.6.5",
+      // 跨平台删除工具
+      "rimraf": "^2.6.3",
+      "ts-loader": "^5.3.3",
+      "typescript": "^3.3.3",
+      // js代码压缩，这里单独提取出来控制版本
+      "uglifyjs-webpack-plugin": "^2.1.1",
+      "webpack": "^4.29.0",
+      "webpack-cli": "^3.2.1",
+      // dev server也是一个轻量级的node.js express服务器，实际上相当于是一个封装好的express的http服务器+调用webpack-dev-middleware。
+      "webpack-dev-server": "^3.1.14",
+      "webpack-hot-middleware": "^2.24.3",
+      // 用于合并配置
+      "webpack-merge": "^4.2.1"
+    }
+  }
+  
