@@ -22,6 +22,8 @@ module.exports = () => {
             filename: 'js/[name].js', // 打包后文件名 默认名字为main
             // filename: 'bundle.js'
             // filename: 'app/[name]_[hash:8].js'
+            // 异步加载的模块是要以文件形式加载，所以这时生成的文件名是以chunkname配置的，生成出的文件名，同时解决缓存问题
+            chunkFilename: '[name]_[chunkhash:8]_chunk.js'
             // publicPath: '/'
         },
         // 预设选项，可作为快捷方式
