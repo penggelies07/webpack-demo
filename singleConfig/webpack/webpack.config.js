@@ -20,6 +20,7 @@ module.exports = {
         filename: 'app/[name].js', // 打包后文件名 默认名字为main
         // filename: 'bundle.js'
         // filename: 'app/[name]_[hash:8].js'
+        chunkFilename: ''
         // publicPath: '/'
     },
     module: {
@@ -75,6 +76,28 @@ module.exports = {
             //         { loader: 'style-loader' },
             //         { loader: 'css-loader' }
             //     ],
+            // },
+            // {
+            //     test: /\.(css|scss|sass)$/,
+            //     // 不分离的写法
+            //     // use: ["style-loader", "css-loader",sass-loader"]
+            //     // 使用postcss不分离的写法
+            //     // use: ["style-loader", "css-loader", sass-loader","postcss-loader"]
+            //     // 此处为分离css的写法
+            //     /*use: extractTextPlugin.extract({
+            //         fallback: "style-loader",
+            //         use: ["css-loader", "sass-loader"],
+            //         // css中的基础路径
+            //         publicPath: "../"
+            //     })*/
+            //     // 此处为使用postcss分离css的写法
+            //     use: extractTextPlugin.extract({
+            //         fallback: "style-loader",
+            //         use: ["css-loader", "sass-loader", "postcss-loader"],
+            //         // css中的基础路径
+            //         publicPath: "../"
+            
+            //     })
             // },
         ]
     },

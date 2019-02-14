@@ -32,3 +32,12 @@
     (II）eval-source-map：每一个模块在执行eval()过程之后，并且会为每一个模块生成sourcemap文件，生成的sourcemap文件通过DataURL的方式添加
     (III）cheap-eval-source-map：跟eval-source-map相同，唯一不同的就是增加了”cheap”，”cheap”是指忽略了行信息。这个属性同时也不会生成不同loader模块之间的sourcemap。
     (VI）cheap-module-eval-source-map：与cheap-eval-source-map相同，但是包含了不同loader模块之间的sourcemap
+
+(7) webpack的devtool
+    devtool: "source-map", // enum
+    devtool: "inline-source-map", // 嵌入到源文件中
+    devtool: "eval-source-map", // 将 SourceMap 嵌入到每个模块中
+    devtool: "hidden-source-map", // SourceMap 不在源文件中引用
+    devtool: "cheap-source-map", // 没有模块映射(module mappings)的 SourceMap 低级变体(cheap-variant)
+    devtool: "cheap-module-source-map", // 有模块映射(module mappings)的 SourceMap 低级变体
+    devtool: "eval", // 没有模块映射，而是命名模块。以牺牲细节达到最快。
