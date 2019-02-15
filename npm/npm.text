@@ -1,0 +1,15 @@
+(1) 如何发布到npm服务器上?
+    注册一个npm账号,首次需要登录,npm login 存储证书到本地,后面就不需要每次都登录的.发布过程会把整个目录发布,不想发布的内容模块,
+    可以通过 .gitignore 或 .npmignore 文件忽略
+    nrm ls 查看当前npm
+    nrm use npm
+    npm publish
+
+(2) 如何更新npm包?
+    修改了提示文字,那么我们需要 npm version <update_type>
+    update_type就是版本号的意思,会自动更新package.json里面的版本号
+    然后重新 npm publish,更新就会完成
+
+(3) sh: ./scripts/npm-publish/publish.sh: Permission denied
+    chmod u+x *.sh
+    这里的u 指文件所有者，+x 添加可执行权限，*.sh表示所有的sh文件。
